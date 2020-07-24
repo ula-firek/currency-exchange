@@ -1,0 +1,63 @@
+.form__header {
+    text-align: center;
+    font-size: 30px;
+    color: rgb(68, 68, 68);
+}
+
+.form__paragraph {
+    text-align: center;
+    text-shadow: 2px 2px 2px white;
+    font-size: 20px;
+}
+
+.form__paragraph--bigFont {
+    font-size: 23px;
+    background-color: hsl(0, 0%, 100%);
+    padding: 8px;
+    color: black;
+    border: 2px solid hsl(0, 0%, 63%);
+    border-radius: 4px ;
+    
+}
+
+.form__labelText {
+    background-color: hsl(214, 67%, 50%);
+    padding: 8px;
+    color: white;
+    border: 2px solid hsl(0, 0%, 63%);
+    border-radius: 4px ;
+    margin-right: 10px;
+    font-size: larger;
+    display: inline-block
+}
+
+.form__field {
+    border: 2px solid hsl(0, 0%, 63%);
+    padding: 10px;
+    max-width: 300px;
+    border-radius: 4px;
+}
+
+.form__fieldChoice {
+    border: 2px solid hsl(0, 0%, 63%);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.form__button {
+    border: 2px solid hsl(0, 0%, 63%);;
+    background-color: hsl(214, 67%, 50%);
+    color: white;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.form__button:hover {
+    background-color: hsl(214, 67%, 55%);
+}
+
+.form__button:active {
+    background-color: hsl(214, 67%, 60%);
+}

@@ -1,0 +1,8 @@
+.background {
+    background-image: url("../images/map-of-the-world.jpg");
+    padding: 20px;
+    padding-bottom: 35%;
+    background-size: cover;
+    background-attachment: local;
+    
+}
