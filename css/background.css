@@ -2,7 +2,7 @@
     background-image: url("../images/map-of-the-world.jpg");
     padding: 20px;
     padding-bottom: 35%;
+    background-position: center;
     background-size: cover;
     background-attachment: local;
-    
 }
