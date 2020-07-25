@@ -1,7 +1,8 @@
 .background {
     background-image: url("../images/map-of-the-world.jpg");
-    padding: 20px;
-    padding-bottom: 35%;
+    max-height: 1210px;
+    padding: 40px;
+   
     background-position: center;
     background-size: cover;
     background-attachment: local;
