@@ -1,5 +1,5 @@
 # Currency exchange
-This is a currency exchange made as part of the Junior Frontend Developer course in You Code. The currency exchange converts PLN into USD or EUR currencies.
+This is a currency exchange made as part of the Junior Frontend Developer course in You Code. The currency exchange converts PLN into USD, EUR or GEL currencies.
 
 ## Table of contents
 * [Screenshots](#screenshots)
@@ -7,13 +7,12 @@ This is a currency exchange made as part of the Junior Frontend Developer course
 * [Setup](#setup)
 * [Features](#features)
 * [Status](#status)
-* [Inspiration](#inspiration)
 * [Contact](#contact)
 
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](./images/image.png)
 
 ## Technologies
 * HTML 
@@ -24,21 +23,51 @@ This is a currency exchange made as part of the Junior Frontend Developer course
 https://ula-firek.github.io/currency-exchange/
 
 ## Code Examples
-Show examples of usage:
-`put-your-code-here`
+```JavaScript
+let formElement = document.querySelector(".js-form")
+let amountElement = document.querySelector(".js-amount")
+let currencyElement = document.querySelector(".js-currency")
+let resultElement = document.querySelector(".js-result")
+
+
+let rateUSD = 3.9689;
+let rateEUR = 4.4710;
+let rateGEL = 1.2879;
+
+formElement.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+
+    let amount = +amountElement.value;
+    let currency = currencyElement.value;
+
+    let result;
+
+    switch (currency) {
+        case "USD":
+            result = amount / rateUSD
+            break;
+        case "EUR":
+            result = amount / rateEUR
+            break;
+        case "GEL":
+            result = amount / rateGEL
+            break;
+    }
+
+    resultElement.innerHTML = `Otrzymasz: ${amount.toFixed(2)} PLN = <strong> ${result.toFixed(2)} ${currency}</strong>`;
+});
+```
 
 ## Features
-List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
 
-To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* Adding a switch function
+* Downloading current exchange rates via API
+* Writing the result of the second currency in the second currency input
+
 
 ## Status
-Project is: _in progress_,  and why?
+Project is: _in progress_ - the You Code course is in progress
 
 
 ## Contact
