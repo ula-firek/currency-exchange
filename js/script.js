@@ -1,33 +1,45 @@
-let formElement = document.querySelector(".js-form")
-let amountElement = document.querySelector(".js-amount")
-let currencyElement = document.querySelector(".js-currency")
-let resultElement = document.querySelector(".js-result")
+{
+
+    const calculateResult = (amount, currency) => {
+        const rateUSD = 3.9689;
+        const rateEUR = 4.4710;
+        const rateGEL = 1.2879;
+
+        switch (currency) {
+            case "USD":
+                return amount / rateUSD;
+            case "EUR":
+                return amount / rateEUR;
+            case "GEL":
+                return amount / rateGEL;
+        }
+    };
+
+    const updateResultText = (amount, result, currency) => {
+        const resultElement = document.querySelector(".js-result")
+        resultElement.innerHTML = `Otrzymasz: ${amount.toFixed(2)} PLN = <strong> ${result.toFixed(2)} ${currency}</strong>`;
+    };
+
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+
+        const amountElement = document.querySelector(".js-amount")
+        const currencyElement = document.querySelector(".js-currency")
+
+        const amount = +amountElement.value;
+        const currency = currencyElement.value;
+
+        const result = calculateResult(amount, currency);
+
+        updateResultText(amount, result, currency);
+    };
 
 
-let rateUSD = 3.9689;
-let rateEUR = 4.4710;
-let rateGEL = 1.2879;
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
 
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
+        formElement.addEventListener("submit", onFormSubmit);
+    };
 
-
-    let amount = +amountElement.value;
-    let currency = currencyElement.value;
-
-    let result;
-
-    switch (currency) {
-        case "USD":
-            result = amount / rateUSD
-            break;
-        case "EUR":
-            result = amount / rateEUR
-            break;
-        case "GEL":
-            result = amount / rateGEL
-            break;
-    }
-
-    resultElement.innerHTML = `Otrzymasz: ${amount.toFixed(2)} PLN = <strong> ${result.toFixed(2)} ${currency}</strong>`;
-});
+    init();
+}
